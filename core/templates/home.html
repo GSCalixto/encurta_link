@@ -11,9 +11,9 @@
     <title>Encurtador de links</title>
   </head>
   <body>
-    <div style="text-align:center" class="container">
+    <div style="text-align:center" class="container"> 
         <h1>Encurtador de links</h1>
-        <form action="">
+        <form  class= "form_links" action="{% url 'valida_link' %}" method="post"> {% csrf_token %}
           <table>
               <div style="display: grid;">
                 <label for="">Link original</label>
@@ -22,8 +22,15 @@
               <br>
               <div style="display: grid;">
                 <label for="">Link encurtado</label>
-                {{form.link_encurtado}}
+                <div class= "form_links">
+                  <label>encurt.com/</label>
+                  {{form.link_encurtado}}
+                </div>  
               </div>
+              {% if status == "1" %}
+              <p style="color:brown;">Link já existe</p>
+              {% endif %}
+              <button type="submit"> Encurtar </button>
           </table>
         </form>
     </div>
