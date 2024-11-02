@@ -20,6 +20,8 @@ def valida_link(request):
     if len(links) > 0:
         return redirect("/?status=1")
 
+    #Salva se for valido e retorna o link encurtado
+    #Nota: a  URL não é essa, enquanto n estiver em produção é a do localhost
     if form.is_valid():
         try:
             form.save()
