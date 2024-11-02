@@ -1,3 +1,4 @@
+#Modelos dos dados a serem armazenados
 from django.db import models
 
 # Create your models here.
